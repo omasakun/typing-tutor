@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Your Personalized Typing Tutor">
+	<meta name="author" content="omasakun">
+	<title>Typing Tutor</title>
+	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400&display=swap&subset=japanese">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kokoro.css">
+	<script defer src="./index.js"></script>
+</head>
+
+<body>
+	<div id="app"></div>
+	<div id="about">
+		<p>注意: 本アプリはまだ開発中です。大胆な機能の変更があるかもしれません。</p>
+		<h2 class="title">これなに？</h2>
+		<p>
+			これは、あなたのタイピングの速さと正確さを効率良く高めるアプリです。
+		</p>
+		<p>
+			しかし、ただのタイピング練習アプリとは違います。あなたはどんなキーを押し間違えやすいのか、どんなキーの組み合わせを間違えやすいのか、そこまで統計的に分析して、あなたに入力してほしい単語	を決定しています。
+		</p>
+		<p>
+			普通のタイピングアプリはそこまでしてくれないでしょう。どうせ予め登録されていた文章を適当な順番で入力させるだけです。そんな奴らとは効率が違うんですよ、効率が！
+		</p>
+		<p>
+			あとは、そんな仕組みが搭載された練習アプリなら納得してタイピング練習ができるでしょう？開発者の私だってそうです。普通のタイピング練習を強制されたときなんか、
+			<q>
+				なんでこんな文を打たなきゃいけないんだ？JavaScriptに惹かれた私には"this"とか"function"とかは速く入力できるから練習しなくていいのに。"question"みたいな打ちにくい指の動きだけ練習したいのに。
+			</q>
+			と思っていたんです。だから打ちにくいキーを重点的に鍛えるための<a class="link" href="https://omasakun.github.io/TypingTutor/" target="_blank">最初のタイピングアプリ</a>を作りました。そのアイデアをもとにして、より使いやすく、機能を拡張しやすい形で作り直したのがこのアプリです。
+		</p>
+		<h2 class="title">このアプリの特徴</h2>
+		<ul>
+			<li>あなたのタイピングの癖に合わせた文章の提示</li>
+			<li>リアルタイムでのWPM, Accuracyの表示</li>
+			<li>打ち間違えが多い・入力が遅いキー・単語の表示</li>
+			<li><span class="indicator_wip">WIP</span> ダークモード</li>
+			<li><span class="indicator_wip">WIP</span> Gistへのプレイ情報の保存</li>
+			<li><span class="indicator_wip">WIP</span> 練習を積んでどれだけ早く正確に打てるようになったかを表す統計情報の表示</li>
+			<li><span class="indicator_wip">WIP</span> 出題に使われる辞書のカスタマイズ: 慣れない専門用語だけ練習！などの用途に</li>
+			<li><span class="indicator_wip">WIP</span> 友人と共にリアルタイムで競える</li>
+			<li><span class="indicator_wip">WIP</span> グローバルリーダーボード: どれだけ早く入力できるかを競える場所</li>
+			<li><span class="indicator_wip">WIP</span> 多言語対応: UIの多言語表示 & 日本語ローマ字のタイピング練習もできるように</li>
+		</ul>
+		※ アイコン<span class="indicator_wip">WIP</span>がついているものは、まだ開発中の機能です。
+		<h2 class="title">あとがき</h2>
+		<p id="postscript">
+			<!-- TODO: HTML, CSSをPug, Sassにして、コメントの自動除去 & 下のリンク軍にクラスつける代わりに sass mixin -->
+			バグ報告・新機能の提案はこちらへ: <a class="link" href="https://github.com/omasakun/typing-tutor/issues" target="_blank">GitHub/Issues</a><br>
+			ソースコード: <a class="link" href="https://github.com/omasakun/typing-tutor" target="_blank">GitHub</a> (PR出してくれてもいいのよ？)<br>
+			開発者: <a class="link" href="https://github.com/omasakun" target="_blank">omasakun</a>
+		</p>
+	</div>
+</body>
+
+</html>

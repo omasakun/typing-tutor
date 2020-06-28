@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "es6",
+		"target": "esnext",
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"rootDir": "src",
+		"strictNullChecks": true,
+		"alwaysStrict": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"experimentalDecorators": true,
+		"inlineSourceMap": true,
+		"strictPropertyInitialization": true,
+		"moduleResolution": "node",
+		"jsx": "react",
+		"jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment", // 2020-06-28 github.com/microsoft/TypeScript Issue#20469 PR#38720 TS 4.0
+	}
+}
