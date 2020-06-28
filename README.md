@@ -2,10 +2,10 @@
 
 Your Personalized Typing Tutor
 
-You can read the detailed description in <a href="https://omasakun.github.io/typing-tutor/">the app</a>.
+You can read the detailed description in <a href="https://typing.o137.dev/">the app</a>.
 
 <p align="center">
-	<a href="https://omasakun.github.io/typing-tutor/">Open Now!</a>
+	<a href="https://typing.o137.dev/">Open Now!</a>
 </p>
 
 ## How to compile
