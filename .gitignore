@@ -1,0 +1,14 @@
+# Logs
+*.log*
+
+# Temporal files
+.tmp/
+.npm/
+*.swp
+
+# Auto generated files
+node_modules/
+
+# Private files
+private*
+.env
