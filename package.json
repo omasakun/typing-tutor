@@ -21,6 +21,7 @@
 		"typescript": "^3.9.5"
 	},
 	"dependencies": {
+		"immer": "^7.0.5",
 		"preact": "^10.4.4",
 		"unistore": "^3.5.2"
 	}

@@ -1,15 +1,16 @@
 // メインスレッドで実行される処理を書きます。全てはここから実行されます。
-
+import { PREVENT_TREESHAKING } from "./workaround-immer";
 import { render } from "preact";
 import * as preact_devtools from "preact/debug";
-import { App } from "./app";
+import { InitialApp } from "./app";
 import { isChrome, onDomLoad } from "./util";
 
+if (PREVENT_TREESHAKING) console.log();
 // console.log(preact_devtools);
 
 showConsoleBanner();
 if (preact_devtools) console.log("preact devtools enabled"); // prevent tree shaking
-render(App, document.getElementById("app")!);
+render(InitialApp, document.getElementById("app")!);
 
 // Banner
 function showConsoleBanner() {
