@@ -1,0 +1,27 @@
+{
+	"private": true,
+	"scripts": {
+		"start": "gulp watch -LL",
+		"build": "gulp build"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^13.0.0",
+		"@rollup/plugin-node-resolve": "^8.0.1",
+		"@tscc/tscc": "^0.4.8",
+		"browser-sync": "^2.26.7",
+		"gulp": "^4.0.2",
+		"gulp-intermediate": "^5.0.0",
+		"gulp-notify": "^3.2.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-typescript": "^6.0.0-alpha.1",
+		"rollup": "^2.17.1",
+		"rollup-plugin-sourcemaps": "^0.6.2",
+		"trash": "^6.1.1",
+		"typescript": "^3.9.5"
+	},
+	"dependencies": {
+		"preact": "^10.4.4",
+		"unistore": "^3.5.2"
+	}
+}
