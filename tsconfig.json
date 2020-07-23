@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
 		"module": "es6",
-		"target": "esnext",
+		"target": "ES2019",
 		"removeComments": true,
 		"preserveConstEnums": true,
 		"rootDir": "src",
