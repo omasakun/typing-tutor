@@ -1,0 +1,27 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+[build]
+	base = "/"
+	publish = ".tmp/"
+	command = "npm run build"
+	# functions = "functions/"
+	skip_processing = true
+
+[build.environment]
+	NPM_FLAGS="--prefix=/"
+
+# [context.production]
+# [context.deploy-preview]
+# [context.branch-deploy]
+# [context.staging] # 'staging' is a branch name
+
+[[redirects]]
+	from = "/*"
+	to = "/index.html"
+	status = 301 # 200 is better for SPA, maybe?
+	force = false
+	# query = {path = ":path"}
+	# conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+	# headers = {X-From = "Netlify"}
+	# signed = "API_SIGNATURE_TOKEN"
+
+# [[headers]]

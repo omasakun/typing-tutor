@@ -1,8 +1,7 @@
 const path = require("path");
 const { dest, parallel, series, src, watch } = require("gulp");
-const babel = require("gulp-babel");
+// const babel = require("gulp-babel"); // @babel/core, @babel/preset-env, gulp-babel
 const bs = require("browser-sync").create();
-const cache = require("gulp-cache");
 const clean_css = require("gulp-clean-css");
 const closure_compiler = require("google-closure-compiler").gulp();
 const favicon = require("favicons").stream;
@@ -16,7 +15,6 @@ const notify = require("gulp-notify");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const pug = require("gulp-pug");
-const rename = require("gulp-rename");
 const rollup = require("rollup").rollup;
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
