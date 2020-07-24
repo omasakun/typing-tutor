@@ -3,7 +3,7 @@
 	"scripts": {
 		"start": "gulp watch -LL --silent",
 		"prod": "gulp watch -LL --silent --prod",
-		"prebuild": "[ \"$CI\" = true ] && npx pnpm@3 install --store=node_modules/.pnpm-store || echo skiping pnpm install",
+		"prebuild": "[ \"$CI\" = true ] && npx pnpm install --store=node_modules/.pnpm-store || echo skiping pnpm install",
 		"build": "gulp build --prod",
 		"fb": "firebase",
 		"ncu": "ncu"
