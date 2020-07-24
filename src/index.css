@@ -127,7 +127,6 @@ body {
 .jumbo_text{
   grid-row: 1;
   grid-column: 1/4;
-  font-size: 2rem;
   text-align: center;
   margin: auto;
   transition: 200ms ease-in-out all, 200ms ease-in transform;
@@ -135,6 +134,12 @@ body {
 .jumbo_text.hidden{
   opacity: 0;
   transform: translateY(-0.5em);
+}
+.jumbo_text>h1{
+  font-size: 2rem;
+}
+.jumbo_text>span{
+  font-size: 1rem;
 }
 .done, .in_progress{
   font-family: "Fira Code", monospace !important;
