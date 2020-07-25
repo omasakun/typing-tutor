@@ -16,12 +16,14 @@
 
 [[redirects]]
 	from = "/*"
-	to = "/index.html"
+	to = "/"
 	status = 301 # 200 is better for SPA, maybe?
 	force = false
 	# query = {path = ":path"}
 	# conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
 	# headers = {X-From = "Netlify"}
 	# signed = "API_SIGNATURE_TOKEN"
+
+# TODO: Add 404 error page
 
 # [[headers]]
