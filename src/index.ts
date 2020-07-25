@@ -13,12 +13,19 @@ if (preact_devtools) console.log("preact devtools enabled"); // prevent tree sha
 onDomLoad(() => {
 	hideLoadingView();
 	// setTimeout(()=>hideLoadingView(), 10000) // for debug
-	document.getElementById("about")?.classList.remove("none"); // TODO: index.css が読み込まれたあとじゃないと良くない
 	render(InitialApp, document.getElementById("app")!);
 });
 
 function hideLoadingView() {
-	window["on_app_loaded"] && window["on_app_loaded"]();
+	const show = () => {
+		window["on_app_loaded"] && window["on_app_loaded"]();
+		document.getElementById("about")?.classList.remove("none");
+	}
+	if (window["is_style_loaded"]) {
+		show();
+	} else {
+		window["on_style_loaded"] = show;
+	}
 }
 
 // Banner

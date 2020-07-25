@@ -10,10 +10,8 @@ html(lang="ja")
 
 		//- TODO: inline loading-view.css
 		link(rel="stylesheet" href="./loading-view.css")
-		//- TODO: preloadに対応していないのが多いからpolyfill
-			link(rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
-			link(rel="preload" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400|Inconsolata:400&display=swap&subset=japanese" as="style" onload="this.onload=null;this.rel='stylesheet'")
-		link(rel="stylesheet" media="print" onload="this.onload=null;this.media='all'" href="index.css")
+		link(rel="preload" href="index.css" as="style")
+		link(rel="stylesheet" media="print" onload="this.onload=null;this.media='all';window.is_style_loaded=!0;window.on_style_loaded&&window.on_style_loaded()" href="index.css")
 		link(rel="stylesheet" media="print" onload="this.onload=null;this.media='all'" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400|Inconsolata:400&display=swap&subset=japanese")
 		noscript
 			link(rel="stylesheet" href="index.css")
@@ -30,22 +28,6 @@ html(lang="ja")
 				.foot
 					span Made by omasakun 
 					a.repo(href="https://github.com/omasakun/typing-tutor" target="_blank" rel="noreferrer") GitHub
-			script.
-				window.on_app_loaded=(()=>{
-					let f=false;
-					const short=setTimeout(function(){f=true;document.getElementById("loading").classList.remove("none","hide")},100);
-					const long=setTimeout(function(){document.getElementById("long-load").classList.remove("hide")},5000);
-					return ()=>{
-						if(f){
-							document.getElementById("loading")?.classList.add("hide");
-							setTimeout(() => document.getElementById("loading")?.classList.add("none"), 150);
-						} else {
-							document.getElementById("loading")?.classList.add("none");
-						}
-						clearTimeout(short);
-						clearTimeout(long);
-					}
-				})();
 		#app
 		#noscript.none
 			:markdown-it
@@ -55,3 +37,5 @@ html(lang="ja")
 			include:markdown-it(plugins=['markdown-it-attrs'] html=true) _about.md
 		noscript
 			style #about.none,#noscript.none{display: block;}
+		script.
+			window.on_app_loaded=function(){var a=!1,b=setTimeout(function(){a=!0;document.getElementById("loading").classList.remove("none","hide")},100),c=setTimeout(function(){document.getElementById("long-load").classList.remove("hide")},5E3);return function(){a?(document.getElementById("loading").classList.add("hide"),setTimeout(function(){return document.getElementById("loading").classList.add("none")},150)):document.getElementById("loading").classList.add("none");clearTimeout(b);clearTimeout(c)}}();
