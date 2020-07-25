@@ -6,6 +6,7 @@
 		"Overridable",
 		"Polyfill",
 		"TREESHAKING",
+		"ciphertext",
 		"devtools",
 		"endregion",
 		"esnext",
@@ -20,6 +21,7 @@
 		"pnpm",
 		"preact",
 		"prebuild",
+		"simplebar",
 		"smacss",
 		"sourcemap",
 		"treeshake",
@@ -27,6 +29,13 @@
 		"typedoc",
 		"typedocs",
 		"unistore",
+		"woff",
 		"yandex"
-	]
+	],
+	"files.exclude": {
+		".git": true,
+		".tmp": true,
+		".vscode": true,
+		"node_modules": true,
+	}
 }

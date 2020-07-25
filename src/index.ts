@@ -3,14 +3,23 @@ import { PREVENT_TREESHAKING } from "./workaround-immer";
 import { render } from "preact";
 import * as preact_devtools from "preact/debug";
 import { InitialApp } from "./app";
-import { isChrome, onDomLoad } from "./util";
+import { isChrome, onLoad, onDomLoad } from "./util";
 
 if (PREVENT_TREESHAKING) console.log();
-// console.log(preact_devtools);
 
 showConsoleBanner();
 if (preact_devtools) console.log("preact devtools enabled"); // prevent tree shaking
-render(InitialApp, document.getElementById("app")!);
+
+onDomLoad(() => {
+	hideLoadingView();
+	// setTimeout(()=>hideLoadingView(), 10000) // for debug
+	document.getElementById("about")?.classList.remove("none"); // TODO: index.css が読み込まれたあとじゃないと良くない
+	render(InitialApp, document.getElementById("app")!);
+});
+
+function hideLoadingView() {
+	window["on_app_loaded"] && window["on_app_loaded"]();
+}
 
 // Banner
 function showConsoleBanner() {

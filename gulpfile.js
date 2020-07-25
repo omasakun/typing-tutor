@@ -64,7 +64,7 @@ const bs_ui_port = 8138;
 
 
 function task_copy() {
-	return src(["src/**/*", "!src/**/*.+(ts|tsx|pug|sass|html|css)", "!src/favicon.*"], { base: "src" })
+	return src(["src/**/*", "!src/**/_*", "!src/**/*.+(ts|tsx|pug|sass|html|css)", "!src/favicon.*"], { base: "src" })
 		.pipe(error2notify())
 		.pipe(prod_only(image_min()))
 		.pipe(dest(dest_dir))
@@ -226,11 +226,11 @@ function task_bs_start(done) {
 }
 
 function task_watch(done) {
-	watch(["src/**/*", "!src/**/*.+(ts|tsx|pug|sass|html|css)", "!src/favicon.*"], task_copy);
+	watch(["src/**/*", "!src/_*", "!src/**/*.+(ts|tsx|pug|sass|html|css)", "!src/favicon.*"], task_copy);
 	watch("src/**/*.html", task_html);
 	watch("src/**/*.css", task_css);
-	watch("src/**/*.pug", task_pug);
-	watch("src/**/*.sass", task_sass);
+	watch("src/**/*.(pug|md)", task_pug); // some pug files includes md
+	watch(["src/**/*.sass", "src/assets/*"], task_sass);
 	watch("src/**/*.+(ts|tsx)", task_ts);
 	watch("src/favicon.*", task_favicon);
 	done();

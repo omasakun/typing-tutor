@@ -1,0 +1,178 @@
+
+$github-icon: inline("_github.svg")
+$square-icon: inline("_square.svg")
+$check-square-icon: inline("_check-square.svg")
+$minus-square-icon: inline("_minus-square.svg")
+
+////////// global
+html
+	width: 100%
+	height: 100%
+	box-sizing: border-box
+	word-break: break-word
+	tab-size: 2
+body
+	width: 100%
+	height: 100%
+	background-color: #d6c8ff
+	color: #34322e
+	font-family: Lato, "Noto Sans JP", Roboto, Helvetica, Arial, sans-serif
+	line-height: 1.8
+	text-size-adjust: 100%
+*, ::after, ::before
+	box-sizing: inherit
+	background-repeat: no-repeat
+::after, ::before
+	text-decoration: inherit
+	vertical-align: inherit
+::selection
+	background-color: rgba(184, 181, 208, 0.5)
+*
+	margin: 0
+	padding: 0
+	-webkit-tap-highlight-color: transparent
+
+////////// .header .title .mono
+.header
+	font-size: 2em
+	font-family: Lato, kokoro, "Noto Sans JP", Roboto, Helvetica, Arial, sans-serif
+	font-weight: 300
+.title
+	font-size: 1em
+	font-weight: 700
+	letter-spacing: 0.13em
+	text-transform: uppercase
+// .mono
+// 	font-family: Inconsolata, monospace !important
+
+////////// .btn .link
+.btn
+	display: inline-block
+	padding: 0.3em 1em
+	border: 1px solid transparent
+	outline: 0 !important
+	cursor: pointer
+	transition: all 0.15s
+	user-select: none
+	border-color: #bab3a1
+	background-color: transparent
+	color: #57544c
+	&.seamless
+		padding: 0.1em 0.3em
+		border-color: transparent
+		background-position: top -1px left
+		background-size: 100% 200%
+		background-image: linear-gradient(to top, #bab3a1 50%, transparent 50%)
+	&:hover:not(:active)
+		border-color: #57544c
+		background-color: #57544c
+		color: #ece3cb
+	&.seamless:hover
+		background-position: top 0px left
+	&:active
+		border-color: #cbc3af
+		background-color: #cbc3af
+		color: #34322e
+.link // 線が左右に開いてく方のアニメーションにする
+	background-position: top -1px left
+	background-size: 100% 200%
+	text-decoration: none
+	cursor: pointer
+	transition: all 0.15s
+	background-image: linear-gradient(to top, #bab3a1 50%, transparent 50%)
+	color: #57544c
+	&:hover
+		background-position: top -2px left
+		background-image: linear-gradient(to top, #57544c 50%, transparent 50%)
+		color: #494640
+	&:active
+		background-position: bottom 0 left
+		color: #ece3cb
+
+////////// #app
+#app
+	padding: 5rem 1rem 0
+	.head
+		font-size: 2rem
+		text-align: center
+		font-family: Lato-Partial, Lato, sans-serif
+	.desc
+		margin-top: 2rem
+		font-weight: bold
+		text-align: center
+		color: #000000
+		letter-spacing: 0.13em
+
+////////// #about
+#about
+	max-width: 42em
+	margin: 2em auto 3em
+	padding: 0 1em
+	p, ul
+		margin: .5em 0
+	ul
+		list-style: none
+		/*&>li::before
+			content: "- "
+			font-family: monospace
+	q
+		margin: .5em 0
+		display: block
+		padding-left: .7em
+		border-left: solid 0.3em rgba(0, 0, 0, 0.2)
+		background-color: rgba(0, 0, 0, 0.03)
+		font-style: italic
+		&::before
+			content: "「"
+		&::after
+			content: "」"
+	h2
+		margin: 1em 0
+		@extend .title
+	a:not(.icon)
+		padding: .2em .2em
+		@extend .link
+	code
+		font-family: Inconsolata, monospace
+.icon
+	display: inline-block
+	background-color: #34322e
+	mask: no-repeat center/1rem
+	color: transparent
+	width: 1.8em
+	height: 1.8em
+	vertical-align: bottom
+	&>*
+		font-size: 0
+	&.github
+		mask-image: $github-icon
+	&.square
+		mask-image: $square-icon
+	&.minus-square
+		mask-image: $minus-square-icon
+	&.check-square
+		mask-image: $check-square-icon
+
+////////// keyframes
+@keyframes blink_then_hide
+	0%
+		opacity: 1
+	10%
+		opacity: 0.3
+	20%
+		opacity: 1
+	30%
+		opacity: 0.3
+	40%
+		opacity: 1
+	50%
+		opacity: 0.3
+	60%
+		opacity: 0.8
+	100%
+		opacity: 0
+@keyframes simple_show
+	0%
+		opacity: 0
+	100%
+		opacity: 1

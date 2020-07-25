@@ -11,6 +11,7 @@
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^13.0.2",
 		"@rollup/plugin-node-resolve": "^8.4.0",
+		"@types/crypto-js": "^3.1.47",
 		"autoprefixer": "^9.8.5",
 		"browser-sync": "^2.26.10",
 		"css-declaration-sorter": "^5.1.2",
@@ -32,6 +33,7 @@
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-typescript": "^6.0.0-alpha.1",
 		"jstransformer-markdown-it": "^2.1.0",
+		"markdown-it-attrs": "^3.0.3",
 		"npm-check-updates": "^7.0.2",
 		"postcss-assets": "^5.0.0",
 		"rollup": "^2.23.0",
@@ -42,8 +44,12 @@
 		"typescript": "^3.9.7"
 	},
 	"dependencies": {
+		"crypto-js": "^4.0.0",
+		"firebase": "^7.17.1",
 		"immer": "^7.0.5",
 		"preact": "^10.4.6",
+		"preact-router": "^3.2.1",
+		"simplebar": "^5.2.1",
 		"unistore": "^3.5.2"
 	}
 }

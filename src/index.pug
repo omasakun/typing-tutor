@@ -1,0 +1,57 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="description" content="Your Personalized Typing Tutor")
+		meta(name="author" content="omasakun")
+		title Typing Tutor
+
+		//- TODO: inline loading-view.css
+		link(rel="stylesheet" href="./loading-view.css")
+		//- TODO: preloadに対応していないのが多いからpolyfill
+			link(rel="preload" href="index.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+			link(rel="preload" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400|Inconsolata:400&display=swap&subset=japanese" as="style" onload="this.onload=null;this.rel='stylesheet'")
+		link(rel="stylesheet" media="print" onload="this.onload=null;this.media='all'" href="index.css")
+		link(rel="stylesheet" media="print" onload="this.onload=null;this.media='all'" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400|Inconsolata:400&display=swap&subset=japanese")
+		noscript
+			link(rel="stylesheet" href="index.css")
+			link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Noto+Sans+JP:300,400,700|Fira+Code:400|Inconsolata:400&display=swap&subset=japanese")
+		script(src="index.js" defer)
+	body
+		#loading.none.hide
+			.inner
+				h1.head Typing Tutor
+				p.desc タイピングを効率的に身につける
+				p.load.hide#long-load
+					| この画面がずっと表示されている場合、おそらく本アプリが起動できなくなるような重大なバグが存在しています。
+					| <a href="https://github.com/omasakun/typing-tutor/issues" target="_blank" rel="noreferrer">バグレポートを送信</a>していただけると嬉しいです。
+				.foot
+					span Made by omasakun 
+					a.repo(href="https://github.com/omasakun/typing-tutor" target="_blank" rel="noreferrer") GitHub
+			script.
+				window.on_app_loaded=(()=>{
+					let f=false;
+					const short=setTimeout(function(){f=true;document.getElementById("loading").classList.remove("none","hide")},100);
+					const long=setTimeout(function(){document.getElementById("long-load").classList.remove("hide")},5000);
+					return ()=>{
+						if(f){
+							document.getElementById("loading")?.classList.add("hide");
+							setTimeout(() => document.getElementById("loading")?.classList.add("none"), 150);
+						} else {
+							document.getElementById("loading")?.classList.add("none");
+						}
+						clearTimeout(short);
+						clearTimeout(long);
+					}
+				})();
+		#app
+		#noscript.none
+			:markdown-it
+				**ブラウザーの設定によってJavaScriptが無効化されているようですが、このウェブアプリはJavaScriptが無効化された状態では動作しません。**
+				- - - - -
+		#about.none
+			include:markdown-it(plugins=['markdown-it-attrs'] html=true) _about.md
+		noscript
+			style #about.none,#noscript.none{display: block;}

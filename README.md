@@ -1,12 +1,19 @@
-# Typing Tutor
+<h1 align="center">Typing Tutor</h1>
+
+<p align="center">
+	<a href="https://app.netlify.com/sites/o137-typing/deploys"><img alt="Netlify Status" src="https://img.shields.io/netlify/0f3d6dd0-0444-40c3-9807-569ef162bce3?style=flat"></a>
+	<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fomasakun%2Ftyping-tutor?ref=badge_shield">
+	<img alt="Fossa Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fomasakun%2Ftyping-tutor.svg?type=shield"></a>
+</p>
+
+<p align="center">
+	<a href="https://typing.o137.dev/">Open Now!</a>
+</p>
 
 Your Personalized Typing Tutor
 
 You can read the detailed description in <a href="https://typing.o137.dev/">the app</a>.
 
-<p align="center">
-	<a href="https://typing.o137.dev/">Open Now!</a>
-</p>
 
 ## How to compile
 
@@ -25,3 +32,5 @@ You can read the detailed description in <a href="https://typing.o137.dev/">the 
 Copyright (C) 2020 [omasakun](https://github.com/omasakun)
 
 Licensed under the [MIT](LICENSE).
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fomasakun%2Ftyping-tutor.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fomasakun%2Ftyping-tutor?ref=badge_large)
