@@ -15,9 +15,15 @@
 # [context.staging] # 'staging' is a branch name
 
 [[redirects]]
+	from = "https://o137-typing.netlify.app/*"
+	to = "https://typing.o137.dev/:splat"
+	status = 301
+	force = true
+
+[[redirects]]
 	from = "/*"
-	to = "/"
-	status = 301 # 200 is better for SPA, maybe?
+	to = "/index.html"
+	status = 200
 	force = false
 	# query = {path = ":path"}
 	# conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
