@@ -205,8 +205,9 @@ function task_favicon() {
 		.pipe(bs_update());
 }
 
-function task_clean() {
-	return trash([dest_dir, ".tmp"]);
+function task_clean(done) {
+	// return trash([dest_dir, ".tmp"]);
+	done();
 }
 
 function task_bs_start(done) {

@@ -125,7 +125,7 @@ function Keyboard(props: { active?: string, hidden: boolean }) {
 function JumboText(props: { hidden: boolean }) {
 	// "Your Personalized Typing Tutor" をそれっぽく訳した。
 	return <div class={`jumbo_text ${props.hidden ? "hidden" : ""}`}>
-		<h1 class="header">あなたに合わせる、Typing&nbsp;Tutor</h1>
+		<h1 class="header">あなたに合わせるTyping&nbsp;Tutor</h1>
 		<span>Scroll down to see more details.</span>
 	</div>
 }
